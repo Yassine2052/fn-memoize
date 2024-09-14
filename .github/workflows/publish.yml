@@ -1,0 +1,26 @@
+name: "Publish Function Memoization Package"
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup NodeJS 📦
+        uses: actions/setup-node@v4
+        with: 
+          node-version: 20.x
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install Dependencies 📂
+        run: npm ci
+      - name: Test Package 🧪
+        run: npm run test
+      - name: Build Package 🧱
+        run: npm run build
+      - name: Publish to NPM 💣
+        run: npm publish --access=public
+        env: 
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN  }}

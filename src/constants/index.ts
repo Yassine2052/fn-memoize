@@ -1,0 +1,1 @@
+export const MAP_MAX_SIZE = 16777216 as const;
