@@ -1,10 +1,13 @@
 {
   "name": "fn-memoize",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "fn-memoize is a lightweight utility that enables efficient memoization of functions, reducing redundant computations by caching results. This package helps optimize performance for functions that are called repeatedly with the same arguments, making it especially useful for computationally expensive operations.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "repository": {
+    "url": "https://github.com/Yassine2052/fn-memoize"
+  },
   "scripts": {
     "build": "tsup",
     "prepare": "tsup",
